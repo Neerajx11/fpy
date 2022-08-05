@@ -5,3 +5,11 @@
   background-color: white;
   min-height: 100vh;
 }
+.err {
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 0;
+  background-color: red;
+  color: white;
+}
