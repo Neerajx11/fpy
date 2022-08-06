@@ -1,12 +1,15 @@
 import React from "react";
 import CardWrapper from "./CardWrapper";
-import HCCards from "./HCCards";
 
-const ContextualCards = ({ data = [] }) => {
-  const list = data.map((el) => (
-    <CardWrapper key={el.id} isScrollable={el.is_scrollable}>
-      <HCCards cardGroup={el} />
-    </CardWrapper>
+const ContextualCards = ({ cardGroups = [] }) => {
+  // cards: [{…}]
+  // design_type: "HC6"
+  // id: 31
+  // is_scrollable: false
+  // name: "UPI Register HCG"
+
+  const list = cardGroups.map((el) => (
+    <CardWrapper key={el.id} cardGroup={el} />
   ));
 
   return (

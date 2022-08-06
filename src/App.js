@@ -41,7 +41,7 @@ function App() {
           {!cardData.length ? (
             <Skeleton />
           ) : (
-            <ContextualCards data={cardData} />
+            <ContextualCards cardGroups={cardData} />
           )}
         </div>
       </PullToRefresh>

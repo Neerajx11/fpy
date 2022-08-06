@@ -1,0 +1,39 @@
+.box {
+  min-width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.box:not(:last-child) {
+  margin-right: 15px;
+}
+.img {
+  width: 30px;
+  height: 30px;
+}
+.body {
+  margin-left: 20px;
+}
+.t1 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px;
+}
+.t2 {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 2px;
+}
+
+/* for is_scrollable */
+.scrollShrink {
+  min-width: max-content;
+}
+.noScrollStyle {
+  min-width: max-content;
+  justify-content: center;
+}

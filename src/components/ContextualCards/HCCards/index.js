@@ -13,9 +13,13 @@ const NameToComp = {
   HC9: HC9,
 };
 
-const HCCards = ({ cardGroup }) => {
-  const CompToRender = NameToComp[cardGroup.design_type];
-  return React.createElement(CompToRender, { data: cardGroup });
+const HCCards = ({ card, designType, scrollMultiple, noScrollMultiple }) => {
+  const CompToRender = NameToComp[designType];
+  return React.createElement(CompToRender, {
+    card,
+    scrollMultiple,
+    noScrollMultiple,
+  });
 };
 
 export default HCCards;

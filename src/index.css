@@ -7,3 +7,16 @@
 body {
   background-color: black;
 }
+.box-shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.hide {
+  display: none;
+}
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
+}
