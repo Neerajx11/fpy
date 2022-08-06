@@ -2,6 +2,7 @@ import s from "./App.module.css";
 import Navbar from "./components/Navbar";
 import PullToRefresh from "react-simple-pull-to-refresh";
 import { useEffect, useState } from "react";
+import StatusBar from "./components/StatusBar";
 
 const BASE_URL = "https://run.mocky.io/v3/4d8db890-5327-4c69-a3ef-b4f5f5225d17";
 
@@ -21,19 +22,7 @@ function App() {
     try {
       const res = await fetch(BASE_URL);
       const data = await res.json();
-      let obj = {};
-      // creating obj of array according to design type
-      // Ex: obj={
-      //    HC9:[],
-      //    HC1:[],
-      //   }
-      data.card_groups.map((el) =>
-        obj[el.design_type]
-          ? obj[el.design_type].push(el)
-          : (obj[el.design_type] = [el])
-      );
-      console.log(obj);
-      setCardData(obj);
+      setCardData(data);
       setErr(false);
     } catch (err) {
       setErr(true);
@@ -46,12 +35,8 @@ function App() {
     <div className={s.main}>
       <Navbar />
       <PullToRefresh onRefresh={refreshHandler}>
-        {/* if error exist then show error component at top */}
-        {err && (
-          <div className={s.err}>
-            Error : Unable to fetch data. Try again :\
-          </div>
-        )}
+        {/* show loading and error state */}
+        <StatusBar isLoading={isLoading} err={err} />
         <div style={{ height: "600px" }}>Hello</div>
       </PullToRefresh>
     </div>
