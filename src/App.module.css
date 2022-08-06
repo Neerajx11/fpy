@@ -11,8 +11,9 @@
   height: max-content;
   position: relative;
 }
-.ctr {
+.body {
   background-color: #f7f6f3;
   padding: 24px 20px;
   min-height: calc(100vh - 80px);
+  border-radius: 12px 12px 0 0;
 }

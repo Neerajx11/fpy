@@ -3,12 +3,13 @@ import Navbar from "./components/Navbar";
 import PullToRefresh from "react-simple-pull-to-refresh";
 import { useEffect, useState } from "react";
 import StatusBar from "./components/StatusBar";
-import CardWrapper from "./components/CardWrapper";
+import Skeleton from "./components/Skeleton";
+import ContextualCards from "./components/ContextualCards";
 
 const BASE_URL = "https://run.mocky.io/v3/4d8db890-5327-4c69-a3ef-b4f5f5225d17";
 
 function App() {
-  const [cardData, setCardData] = useState({});
+  const [cardData, setCardData] = useState([]);
   const [err, setErr] = useState(false);
 
   // fetch card details on initial render
@@ -35,8 +36,13 @@ function App() {
       <PullToRefresh className={s.ptrm} onRefresh={refreshHandler}>
         {/* shows error state */}
         <StatusBar err={err} />
-        <div className={s.ctr}>
-          <CardWrapper data={cardData} />
+        {/* main body */}
+        <div className={s.body}>
+          {!cardData.length ? (
+            <Skeleton />
+          ) : (
+            <ContextualCards data={cardData} />
+          )}
         </div>
       </PullToRefresh>
     </div>

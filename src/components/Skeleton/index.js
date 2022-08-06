@@ -3,7 +3,7 @@ import s from "./Skeleton.module.css";
 
 const Skeleton = () => {
   return (
-    <div className={s.main}>
+    <div>
       <div className={`${s.sqr} ${s.base}`}>
         <div className={`${s.img} ${s.gray}`}></div>
         <div className={`${s.btn} ${s.gray}`}></div>
