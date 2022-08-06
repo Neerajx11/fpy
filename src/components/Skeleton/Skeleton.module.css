@@ -1,0 +1,38 @@
+.sqr,
+.rect {
+  width: calc(100% - 20px);
+  padding: 30px;
+  margin: 10px;
+}
+.sqr {
+  height: 300px;
+}
+.base {
+  background-color: #eee;
+  border-radius: 8px;
+}
+.gray {
+  background-color: rgb(216, 216, 216);
+  border-radius: 4px;
+}
+.img {
+  width: 100%;
+  height: 150px;
+}
+.btn {
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+}
+.icoDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+.btm {
+  height: max-content;
+}

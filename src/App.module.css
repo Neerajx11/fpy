@@ -4,4 +4,15 @@
   margin: auto;
   background-color: white;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.ptrm {
+  height: max-content;
+  position: relative;
+}
+.ctr {
+  background-color: #f7f6f3;
+  padding: 24px 20px;
+  min-height: calc(100vh - 80px);
 }

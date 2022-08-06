@@ -1,14 +1,12 @@
-.err,
-.load {
+.err {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   text-align: center;
   font-weight: 500;
   font-size: 13px;
-  padding: 10px 0;
+  padding: 6px 0;
   color: white;
-}
-.err {
   background-color: red;
-}
-.load {
-  background-color: rgb(255, 191, 0);
 }
