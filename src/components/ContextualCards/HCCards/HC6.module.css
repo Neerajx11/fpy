@@ -18,15 +18,16 @@
 .body {
   margin-left: 20px;
 }
-.t1 {
-  font-size: 14px;
+.t1,
+.t2 {
   font-weight: 500;
   padding: 2px;
 }
+.t1 {
+  font-size: 14px;
+}
 .t2 {
   font-size: 12px;
-  font-weight: 400;
-  padding: 2px;
 }
 
 /* for is_scrollable */

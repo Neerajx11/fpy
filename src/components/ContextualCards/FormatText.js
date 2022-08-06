@@ -19,7 +19,7 @@ const FormatText = ({ data, className = "" }) => {
         />
       );
     }
-    return <>{el} </>;
+    return <React.Fragment key={v4()}>{el} </React.Fragment>;
   });
 
   return <div className={className}>{res}</div>;

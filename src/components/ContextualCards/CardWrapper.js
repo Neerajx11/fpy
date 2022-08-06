@@ -4,6 +4,9 @@ import HCCards from "./HCCards";
 import { v4 } from "uuid";
 
 const CardWrapper = ({ cardGroup }) => {
+  if (cardGroup.design_type === "HC9") {
+    console.log(cardGroup);
+  }
   let scrollMultiple =
       cardGroup.cards.length === 1 ? false : cardGroup.is_scrollable,
     noScrollMultiple =
@@ -13,6 +16,7 @@ const CardWrapper = ({ cardGroup }) => {
     <HCCards
       key={v4()}
       card={el}
+      height={cardGroup.height || 0}
       designType={cardGroup.design_type}
       scrollMultiple={scrollMultiple}
       noScrollMultiple={noScrollMultiple}

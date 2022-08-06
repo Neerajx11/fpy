@@ -13,12 +13,19 @@ const NameToComp = {
   HC9: HC9,
 };
 
-const HCCards = ({ card, designType, scrollMultiple, noScrollMultiple }) => {
+const HCCards = ({
+  card,
+  designType,
+  scrollMultiple,
+  noScrollMultiple,
+  height,
+}) => {
   const CompToRender = NameToComp[designType];
   return React.createElement(CompToRender, {
     card,
     scrollMultiple,
     noScrollMultiple,
+    height,
   });
 };
 
