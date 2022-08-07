@@ -1,8 +1,10 @@
 import React from "react";
 import FormatText from "../FormatText";
 import s from "./HC6.module.css";
+import Arrow from "../../../assets/arrow.png";
 
 const HC6 = ({ card, scrollMultiple, noScrollMultiple }) => {
+  console.log(card.title);
   return (
     <a
       href={card.url}
@@ -13,18 +15,20 @@ const HC6 = ({ card, scrollMultiple, noScrollMultiple }) => {
       } box-shadow`}
     >
       <img className={s.img} src={card.icon.image_url} alt="" />
-      {/* 3rd condition */}
-      <div className={`${s.body} ${noScrollMultiple && "hide"}`}>
-        <FormatText
-          className={s.t1}
-          formattedText={card.formatted_description}
-          fallback={card.description}
-        />
-        <FormatText
-          className={s.t2}
-          formattedText={card.formatted_title}
-          fallback={card.title}
-        />
+      <div className={`${s.main} ${noScrollMultiple && "hide"}`}>
+        <div className={s.body}>
+          <FormatText
+            className={s.t1}
+            formattedText={card.formatted_description}
+            fallback={card.description}
+          />
+          <FormatText
+            className={s.t2}
+            formattedText={card.formatted_title}
+            fallback={card.title}
+          />
+        </div>
+        <img src={Arrow} className={s.arrow} alt="" />
       </div>
     </a>
   );

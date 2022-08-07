@@ -5,7 +5,21 @@
   font-family: "Roboto", sans-serif;
 }
 body {
+  background-image: linear-gradient(to top left, #ffad00, #ff5100);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
   background-color: black;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .box-shadow {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
