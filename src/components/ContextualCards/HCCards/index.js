@@ -19,14 +19,27 @@ const HCCards = ({
   scrollMultiple,
   noScrollMultiple,
   height,
+  blacklist,
+  setBlacklist,
 }) => {
   const CompToRender = NameToComp[designType];
-  return React.createElement(CompToRender, {
+  const normal = {
     card,
     scrollMultiple,
     noScrollMultiple,
     height,
-  });
+  };
+  const HC3Props = {
+    blacklist,
+    setBlacklist,
+  };
+
+  let props = normal;
+
+  // only add blacklist props if design type is HC3
+  if (designType === "HC3") props = { ...props, ...HC3Props };
+
+  return React.createElement(CompToRender, props);
 };
 
 export default HCCards;

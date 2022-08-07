@@ -7,9 +7,14 @@ import s from "./HC3.module.css";
 import Bell from "../../../assets/bell.png";
 import X from "../../../assets/x.png";
 
-const HC3 = ({ card }) => {
+const HC3 = ({ card, blacklist, setBlacklist }) => {
   const [press, setPress, downHandler, upHandler] = useLongPress();
   const [remindLater, setRemindLater] = useState(false);
+
+  const isBlacklisted = blacklist.includes(card.name);
+  if (isBlacklisted) return <></>;
+
+  const addToBlackList = (name) => setBlacklist((prev) => [...prev, name]);
 
   const baseClickHandler = (e) => {
     e.stopPropagation();
@@ -74,7 +79,7 @@ const HC3 = ({ card }) => {
           <img src={Bell} alt="remind later" />
           <span>remind later</span>
         </div>
-        <div className={s.backBtn}>
+        <div className={s.backBtn} onClick={() => addToBlackList(card.name)}>
           <img src={X} alt="dismiss now" />
           <span>dismiss now</span>
         </div>
