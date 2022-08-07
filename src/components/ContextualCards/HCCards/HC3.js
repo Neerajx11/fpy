@@ -4,8 +4,8 @@ import { useLongPress } from "../../../hooks/useLongPress";
 import { v4 } from "uuid";
 
 import s from "./HC3.module.css";
-import Bell from "../../../assets/bell.png";
-import X from "../../../assets/x.png";
+import Bell from "../../../assets/bell.svg";
+import X from "../../../assets/x.svg";
 
 const HC3 = ({ card, blacklist, setBlacklist }) => {
   // used for long press

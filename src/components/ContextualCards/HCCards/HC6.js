@@ -1,7 +1,7 @@
 import React from "react";
 import FormatText from "../FormatText";
 
-import Arrow from "../../../assets/arrow.png";
+import Arrow from "../../../assets/arrow.svg";
 import s from "./HC6.module.css";
 
 const HC6 = ({ card, scrollMultiple, noScrollMultiple }) => {
