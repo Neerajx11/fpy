@@ -1,6 +1,6 @@
 # Fampay Frontend Assignment
 
-### [Live Website](https://petus.vercel.app/) : It is a React Frontend App to display contextual cards.
+### [Live Website](https://fpy.vercel.app/) : It is a React Frontend App to display contextual cards.
 
 <br/>
 
