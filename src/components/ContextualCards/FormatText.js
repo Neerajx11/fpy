@@ -8,9 +8,14 @@ const SpecialText = ({ color, text, extraText }) => (
   </span>
 );
 
-const FormatText = ({ data, className = "" }) => {
+const FormatText = ({ formattedText, fallback, className = "" }) => {
+  // fallback text
+  if (!formattedText) {
+    return <p className={className}>{fallback}</p>;
+  }
+
   // splitting sentence into words
-  let final = data.text.split(" ");
+  let final = formattedText.text.split(" ");
   let i = -1;
 
   let res = final.map((el) => {
@@ -20,8 +25,8 @@ const FormatText = ({ data, className = "" }) => {
       return (
         <SpecialText
           key={v4()}
-          color={data.entities[i].color}
-          text={data.entities[i].text}
+          color={formattedText.entities[i].color}
+          text={formattedText.entities[i].text}
           extraText={el.substr(2)}
         />
       );

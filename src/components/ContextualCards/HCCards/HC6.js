@@ -15,8 +15,16 @@ const HC6 = ({ card, scrollMultiple, noScrollMultiple }) => {
       <img className={s.img} src={card.icon.image_url} alt="" />
       {/* 3rd condition */}
       <div className={`${s.body} ${noScrollMultiple && "hide"}`}>
-        <FormatText className={s.t1} data={card.formatted_description} />
-        <FormatText className={s.t2} data={card.formatted_title} />
+        <FormatText
+          className={s.t1}
+          formattedText={card.formatted_description}
+          fallback={card.description}
+        />
+        <FormatText
+          className={s.t2}
+          formattedText={card.formatted_title}
+          fallback={card.title}
+        />
       </div>
     </a>
   );

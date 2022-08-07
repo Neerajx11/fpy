@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 } from "uuid";
 import { useLongPress } from "../../../hooks/useLongPress";
 import FormatText from "../FormatText";
@@ -9,11 +9,14 @@ import X from "../../../assets/x.png";
 
 const HC3 = ({ card }) => {
   const [press, setPress, downHandler, upHandler] = useLongPress();
+  const [remindLater, setRemindLater] = useState(false);
 
   const baseClickHandler = (e) => {
     e.stopPropagation();
     setPress(false);
   };
+
+  const remindHandler = () => setRemindLater(true);
 
   let height = 100 / card.bg_image.aspect_ratio;
   const cardBaseStyle = {
@@ -41,7 +44,7 @@ const HC3 = ({ card }) => {
   });
 
   return (
-    <div className={s.box}>
+    <div className={`${s.box} ${remindLater && s.hide}`}>
       <div
         style={cardBaseStyle}
         // for laptop/pc
@@ -53,15 +56,21 @@ const HC3 = ({ card }) => {
         className={`${s.base} ${press && s.slide}`}
       >
         <div className={s.t1}>
-          <FormatText data={card.formatted_title} />
+          <FormatText
+            formattedText={card.formatted_title}
+            fallback={card.title}
+          />
         </div>
         <div className={s.t2}>
-          <FormatText data={card.formatted_description} />
+          <FormatText
+            formattedText={card.formatted_description}
+            fallback={card.description}
+          />
         </div>
         <div className={s.ctaCtr}>{ctaBtnList}</div>
       </div>
       <div className={s.backBase} onClick={baseClickHandler}>
-        <div className={s.backBtn}>
+        <div className={s.backBtn} onClick={remindHandler}>
           <img src={Bell} alt="remind later" />
           <span>remind later</span>
         </div>

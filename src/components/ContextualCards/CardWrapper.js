@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./CardWrapper.module.css";
 import HCCards from "./HCCards";
 import { v4 } from "uuid";
 
 const CardWrapper = ({ cardGroup }) => {
-  if (cardGroup.design_type === "HC3") {
-    console.log(cardGroup);
-  }
+  const [HC3Blacklist, setHC3Blacklist] = useState([]);
+
   let scrollMultiple =
       cardGroup.cards.length === 1 ? false : cardGroup.is_scrollable,
     noScrollMultiple =
@@ -20,6 +19,8 @@ const CardWrapper = ({ cardGroup }) => {
       designType={cardGroup.design_type}
       scrollMultiple={scrollMultiple}
       noScrollMultiple={noScrollMultiple}
+      blacklist={HC3Blacklist}
+      setBlacklist={setHC3Blacklist}
     />
   ));
 

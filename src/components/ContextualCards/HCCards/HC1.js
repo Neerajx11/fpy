@@ -14,7 +14,11 @@ const HC1 = ({ card, scrollMultiple }) => {
       <img className={s.img} src={card.icon.image_url} alt="" />
       {/* 3rd condition */}
       <div className={`${s.body}`}>
-        <FormatText className={s.t1} data={card.formatted_title} />
+        <FormatText
+          className={s.t1}
+          formattedText={card.formatted_title}
+          fallback={card.title}
+        />
       </div>
     </a>
   );

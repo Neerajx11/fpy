@@ -23,10 +23,10 @@ a:active {
 }
 
 /* Scrollbar */
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 400px) {
   ::-webkit-scrollbar {
     width: 2px;
-    height: 6px;
+    height: 4px;
     border-radius: 8px;
   }
   ::-webkit-scrollbar-track {

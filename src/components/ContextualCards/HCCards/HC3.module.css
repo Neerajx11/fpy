@@ -75,3 +75,6 @@
 .slide {
   transform: translateX(125px);
 }
+.hide {
+  display: none;
+}
