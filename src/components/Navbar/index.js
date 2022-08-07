@@ -1,4 +1,5 @@
 import React from "react";
+
 import s from "./Navbar.module.css";
 import NavIcon from "../../assets/navIcon.png";
 import Logo from "../../assets/logo.png";

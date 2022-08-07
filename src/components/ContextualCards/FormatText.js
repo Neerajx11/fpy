@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 } from "uuid";
 
+// return text in span with color from entity
 const SpecialText = ({ color, text, extraText }) => (
   <span style={{ color: color }}>
     {text}
@@ -9,17 +10,19 @@ const SpecialText = ({ color, text, extraText }) => (
 );
 
 const FormatText = ({ formattedText, fallback, className = "" }) => {
-  // fallback text
+  // fallback text if format text is not present
   if (!formattedText) {
     return <p className={className}>{fallback}</p>;
   }
 
   // splitting sentence into words
   let final = formattedText.text.split(" ");
+
   let i = -1;
 
   let res = final.map((el) => {
     // checking for words starting with {}
+    // if true replace with special text
     if (el[0] === "{" && el[1] === "}") {
       i++;
       return (
@@ -31,6 +34,8 @@ const FormatText = ({ formattedText, fallback, className = "" }) => {
         />
       );
     }
+
+    // else return normal text
     return <React.Fragment key={v4()}>{el} </React.Fragment>;
   });
 

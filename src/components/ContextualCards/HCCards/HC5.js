@@ -1,8 +1,11 @@
 import React from "react";
+
 import s from "./HC5.module.css";
 
-const HC5 = ({ card, scrollMultiple, noScrollMultiple }) => {
-  let height = 100 / card.bg_image.aspect_ratio;
+const HC5 = ({ card, scrollMultiple }) => {
+  // calculate height = w/aspect_ratio
+  let height = 100 / (card.bg_image.aspect_ratio || 1);
+
   return (
     <a
       href={card.url}

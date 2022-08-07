@@ -1,5 +1,6 @@
 import React from "react";
 import FormatText from "../FormatText";
+
 import s from "./HC1.module.css";
 
 const HC1 = ({ card, scrollMultiple }) => {
@@ -12,7 +13,6 @@ const HC1 = ({ card, scrollMultiple }) => {
       className={`${s.box} ${scrollMultiple && s.fullWidth} box-shadow`}
     >
       <img className={s.img} src={card.icon.image_url} alt="" />
-      {/* 3rd condition */}
       <div className={`${s.body}`}>
         <FormatText
           className={s.t1}

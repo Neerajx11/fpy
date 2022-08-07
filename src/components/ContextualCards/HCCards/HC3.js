@@ -1,34 +1,45 @@
 import React, { useState } from "react";
-import { v4 } from "uuid";
-import { useLongPress } from "../../../hooks/useLongPress";
 import FormatText from "../FormatText";
-import s from "./HC3.module.css";
+import { useLongPress } from "../../../hooks/useLongPress";
+import { v4 } from "uuid";
 
+import s from "./HC3.module.css";
 import Bell from "../../../assets/bell.png";
 import X from "../../../assets/x.png";
 
 const HC3 = ({ card, blacklist, setBlacklist }) => {
+  // used for long press
   const [press, setPress, downHandler, upHandler] = useLongPress();
-  const [remindLater, setRemindLater] = useState(false);
 
+  // used to hide card when remind later is clicked, reset after refresh
+  const [remindLater, setRemindLater] = useState(false);
+  const remindHandler = () => setRemindLater(true);
+
+  // if the card is blacklisted listed return nothing
   const isBlacklisted = blacklist.includes(card.name);
   if (isBlacklisted) return <></>;
 
+  // if we dimissed a card
   const addToBlackList = (name) => setBlacklist((prev) => [...prev, name]);
 
+  // cancel the sliding of the card
   const baseClickHandler = (e) => {
     e.stopPropagation();
     setPress(false);
   };
 
-  const remindHandler = () => setRemindLater(true);
+  // STYLING and RENDERING of cards
 
-  let height = 100 / card.bg_image.aspect_ratio;
+  // calculate height of the card with help of aspect ratio
+  // card has 100% width, so h = w/aspect_ratio
+  let height = 100 / (card.bg_image.aspect_ratio || 1);
   const cardBaseStyle = {
     backgroundColor: card.bg_color,
     backgroundImage: `url(${card.bg_image.image_url})`,
     height: `${height}%`,
   };
+
+  // cta button styles, used map because we can have multiple buttons
   const ctaBtnList = card.cta.map((el) => {
     const btnStyle = {
       backgroundColor: el.bg_color,
@@ -74,6 +85,7 @@ const HC3 = ({ card, blacklist, setBlacklist }) => {
         </div>
         <div className={s.ctaCtr}>{ctaBtnList}</div>
       </div>
+      {/* side buttons */}
       <div className={s.backBase} onClick={baseClickHandler}>
         <div className={s.backBtn} onClick={remindHandler}>
           <img src={Bell} alt="remind later" />

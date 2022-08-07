@@ -13,6 +13,7 @@ const NameToComp = {
   HC9: HC9,
 };
 
+// master component takes data and render card accordingly
 const HCCards = ({
   card,
   designType,

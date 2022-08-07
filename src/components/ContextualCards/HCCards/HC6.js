@@ -1,10 +1,10 @@
 import React from "react";
 import FormatText from "../FormatText";
-import s from "./HC6.module.css";
+
 import Arrow from "../../../assets/arrow.png";
+import s from "./HC6.module.css";
 
 const HC6 = ({ card, scrollMultiple, noScrollMultiple }) => {
-  console.log(card.title);
   return (
     <a
       href={card.url}

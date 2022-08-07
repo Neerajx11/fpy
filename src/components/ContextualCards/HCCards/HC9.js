@@ -1,7 +1,9 @@
 import React from "react";
+
 import s from "./HC9.module.css";
 
 const HC9 = ({ card, height }) => {
+  // calculating width = aspect_ratio * height
   let width = (card.bg_image.aspect_ratio || 1) * height;
   return (
     <a
@@ -15,6 +17,7 @@ const HC9 = ({ card, height }) => {
         minWidth: width,
       }}
     >
+      {/* invisible text */}
       <p className={s.t1}>""</p>
     </a>
   );

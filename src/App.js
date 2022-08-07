@@ -1,10 +1,11 @@
-import s from "./App.module.css";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import PullToRefresh from "react-simple-pull-to-refresh";
-import { useEffect, useState } from "react";
 import StatusBar from "./components/StatusBar";
 import Skeleton from "./components/Skeleton";
 import ContextualCards from "./components/ContextualCards";
+
+import s from "./App.module.css";
 
 const BASE_URL = "https://run.mocky.io/v3/4d8db890-5327-4c69-a3ef-b4f5f5225d17";
 

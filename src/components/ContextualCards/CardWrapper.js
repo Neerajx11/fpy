@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import s from "./CardWrapper.module.css";
 import HCCards from "./HCCards";
 import { v4 } from "uuid";
 
+import s from "./CardWrapper.module.css";
+
 const CardWrapper = ({ cardGroup }) => {
+  // used for hiding HC3 cards when they are dismissed
   const [HC3Blacklist, setHC3Blacklist] = useState([]);
 
+  // help in changing styles
   let scrollMultiple =
       cardGroup.cards.length === 1 ? false : cardGroup.is_scrollable,
     noScrollMultiple =
