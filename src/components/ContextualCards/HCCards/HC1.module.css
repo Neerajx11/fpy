@@ -1,0 +1,25 @@
+.box {
+  display: flex;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.box:not(:last-child) {
+  margin-right: 15px;
+}
+
+.img {
+  width: 35px;
+  height: auto;
+}
+.t1 {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+.fullWidth {
+  min-width: 70%;
+}

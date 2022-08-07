@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./HC9.module.css";
 
-const HC9 = ({ card, scrollMultiple, noScrollMultiple, height }) => {
+const HC9 = ({ card, height }) => {
   let width = (card.bg_image.aspect_ratio || 1) * height;
   return (
     <a

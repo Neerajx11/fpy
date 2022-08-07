@@ -4,7 +4,7 @@ import HCCards from "./HCCards";
 import { v4 } from "uuid";
 
 const CardWrapper = ({ cardGroup }) => {
-  if (cardGroup.design_type === "HC9") {
+  if (cardGroup.design_type === "HC3") {
     console.log(cardGroup);
   }
   let scrollMultiple =

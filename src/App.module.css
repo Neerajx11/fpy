@@ -1,11 +1,13 @@
 .main {
   max-width: 420px;
   min-width: 360px;
-  margin: auto;
+  margin: 20px auto;
   background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
 }
 .ptrm {
   height: max-content;

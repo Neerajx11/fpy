@@ -12,12 +12,7 @@ const ContextualCards = ({ cardGroups = [] }) => {
     <CardWrapper key={el.id} cardGroup={el} />
   ));
 
-  return (
-    <div>
-      <div>ContextualCards</div>
-      <div>{list}</div>
-    </div>
-  );
+  return <div>{list}</div>;
 };
 
 export default ContextualCards;

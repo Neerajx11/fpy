@@ -13,10 +13,28 @@ body {
 .hide {
   display: none;
 }
+
 a,
 a:link,
 a:visited,
 a:active {
   text-decoration: none;
   color: black;
+}
+
+/* Scrollbar */
+@media screen and (min-width: 420px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 6px;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: rgb(173, 173, 173);
+    border-radius: 8px;
+  }
 }

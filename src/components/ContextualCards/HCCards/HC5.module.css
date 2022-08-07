@@ -1,0 +1,19 @@
+.box {
+  min-width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.box:not(:last-child) {
+  margin-right: 15px;
+}
+.bg {
+  background-size: contain;
+}
+.box img {
+  width: 100%;
+}
